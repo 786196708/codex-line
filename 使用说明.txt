@@ -1,0 +1,22 @@
+﻿Codex 系统代理一键启用工具
+============================
+
+适用场景：
+ChatGPT/Codex 普通聊天可以使用，但手机连接电脑、Remote 或“控制此电脑”无法上线；电脑使用 SuYou、Clash Verge 或其他已经开启 Windows 系统代理的软件。
+
+使用方法：
+1. 保持代理软件运行，并打开“系统代理”。不要求打开 TUN。
+2. 双击“一键启用Codex系统代理.cmd”。不需要管理员权限。
+3. 看到“启用并验证成功”或“该功能已经启用”后，从系统托盘完全退出 ChatGPT，再重新打开。
+4. 进入 ChatGPT 设置 → 连接 → 控制此电脑，打开允许连接，然后在手机 ChatGPT 的 Codex/Remote 中测试。
+
+安全说明：
+- 工具使用 Windows 自带 PowerShell，直接在 Codex 配置中启用 respect_system_proxy。
+- 工具不会启动 codex.exe，因此不受另一台电脑中 Codex 程序架构或旧版残留文件影响。
+- 不修改 SuYou、Windows 系统代理、环境变量、驱动、服务或网卡。
+- 不会自动关闭或重启 ChatGPT，避免当前工作突然中断。
+- 修改前会把 config.toml 备份到：%USERPROFILE%\.codex\backups\codex-system-proxy
+- 该开关目前由 Codex 标记为 under development；如果启用后仍无效，请先更新 ChatGPT Windows 桌面端。
+
+如果另一台电脑是第一次使用：
+先正常安装并至少打开一次 ChatGPT Windows 桌面端，再运行本工具。
